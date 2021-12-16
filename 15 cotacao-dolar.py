@@ -1,3 +1,5 @@
+import datetime
+
 import requests
 import json
 import time
@@ -9,11 +11,11 @@ while True:
     except:
         print('Não temos cotação disponível')
 
-    padrao = json.loads(requis.text)
+    quotation = json.loads(requis.text)
 
     print(' ============================ ')
-    print('cotação atualizada em -> ', padrao['EURBRL']['create_date'])
-    print(padrao['USDBRL']['name'],' = ', padrao['USDBRL']['high'])
-    print(padrao['EURBRL']['name'],' = ', padrao['EURBRL']['high'])
+    print('cotação atualizada em -> ', datetime.datetime.now())
+    print(quotation['USDBRL']['name'], ' = ', quotation['USDBRL']['high'])
+    print(quotation['EURBRL']['name'], ' = ', quotation['EURBRL']['high'])
     print(' ============================ ')
     print('')
