@@ -1,20 +1,5 @@
 import requests
 import json
-'''
-def existefilmes(titulo):
-    quant = 0
-    try:
-        req = requests.get('https://www.omdbapi.com/?apikey=25ddb129&s='+ titulo +'&type=movie')
-        resposta = json.loads(req.text)
-
-    except:
-        print('falha na conexão !!!!')
-        return quant
-
-    if resposta['Response'] == 'True':
-        quant = resposta['totalResults']
-        return quant
-'''
 
 def listafilmes(titulo):
     lista = []
