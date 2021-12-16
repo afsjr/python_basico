@@ -1,13 +1,19 @@
-import re
 import requests
 import json
-try:
-    requis = requests.get('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL')
-except:
-    print('Não temos cotação disponível')
+import time
 
-padrao = json.loads(requis.text)
+while True:
+    time.sleep(4)
+    try:
+        requis = requests.get('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL')
+    except:
+        print('Não temos cotação disponível')
 
-print('cotação atualizada em -> ', padrao['EURBRL']['create_date'])
-print(padrao['USDBRL']['name'],' = ', padrao['USDBRL']['high'])
-print(padrao['EURBRL']['name'],' = ', padrao['EURBRL']['high'])
+    padrao = json.loads(requis.text)
+
+    print(' ============================ ')
+    print('cotação atualizada em -> ', padrao['EURBRL']['create_date'])
+    print(padrao['USDBRL']['name'],' = ', padrao['USDBRL']['high'])
+    print(padrao['EURBRL']['name'],' = ', padrao['EURBRL']['high'])
+    print(' ============================ ')
+    print('')
