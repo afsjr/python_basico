@@ -1,10 +1,15 @@
 import re
+import requests
+lista = []
+requisicao = requests.get('https://www.ghenos.net/es/contactos/')
 
-string_de_teste = 'o gato, a gata, os gatos, as gatinhas e os gatoes'
+padrao = re.findall(r'[\w-]+@[\w-]+\.[\w-]+', requisicao.text)
 
-padrao = re.findall(r'gat\w*',string_de_teste)
+lista.append(padrao)
 
 if padrao:
     print(padrao)
+    for i in padrao:
+        print(i)
 else:
     print('padrao não encontrado')
