@@ -3,7 +3,7 @@ import json
 import time
 
 while True:
-    time.sleep(4)
+    time.sleep(1)
     try:
         requis = requests.get('https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL')
     except:
