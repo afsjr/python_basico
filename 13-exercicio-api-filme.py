@@ -26,6 +26,7 @@ while not sair:
     filme = input('Digite o nome do filme para pesquisa ou SAIR : ')
     if filme == 'SAIR':
         sair == True
+        break
     else:
        filmes_encontrados= listafilmes(filme)
        print('filmes encontrados', len(filmes_encontrados))
